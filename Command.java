@@ -17,14 +17,14 @@ public class Command extends ListenerAdapter {
 
 
             switch(args[0]) {
-                case "hello": help(e.getMessage()); System.out.println("says hello"); break;
+                case "hello": hello(e.getMessage()); System.out.println("says hello"); break;
                 case "delete" : delete(e.getMessage()); System.out.println("deleting memes"); break;
             }
         }
     }
 
 
-    private void help(Message msg) {
+    private void hello(Message msg) {
         String user = msg.getAuthor().getName().toString();
         msg.getChannel().sendMessage( "Hello "+ user).queue(m-> {
             Timer timer = new Timer();
